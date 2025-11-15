@@ -37,7 +37,7 @@ chunk-meshes:
       decimation-s0: 0.005
 
 skeletons:
-  neutu-executable: /groups/flyem/proj/cluster/miniforge/workspace/pixi-neutu/.pixi/envs/default/bin/neutu
+  neutu-executable: .pixi/envs/neutu/bin/neutu
   scale: coarse
 
 force-update: false

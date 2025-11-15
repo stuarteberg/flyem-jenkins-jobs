@@ -18,6 +18,7 @@ neutu = {features = ["neutu"], no-default-feature = true}
 
 [activation]
 # Note: set-credentials.sh is excluded from the git repo.
+# It sets DVID_ADMIN_TOKEN and NEUPRINT_APPLICATION_CREDENTIALS.
 scripts = ["set-credentials.sh"]
 
 [tasks.update-malecns-neuprint-annotations]
