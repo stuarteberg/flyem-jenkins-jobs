@@ -1,0 +1,42 @@
+[workspace]
+authors = ["Stuart Berg <bergs@janelia.hhmi.org>"]
+channels = ["flyem-forge", "conda-forge"]
+name = "env"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[dependencies]
+flyem-snapshot = ">=0.1.15.post0.dev98,<0.2"
+vol2mesh = ">=0.2,<0.3"
+
+[feature.neutu.dependencies]
+neutu-develop = ">=0.9.18"
+
+[environments]
+default = []
+neutu = {features = ["neutu"], no-default-feature = true}
+
+[activation]
+# Note: set-credentials.sh is excluded from the git repo.
+scripts = ["set-credentials.sh"]
+
+[tasks.update-malecns-neuprint-annotations]
+cmd = [
+    # The update-neuprint-annotations command is shipped with the flyem-snapshot package.
+    "update-neuprint-annotations",
+    
+    "--output-dir=logs/update-neuprint-annotations-logs",
+
+    # DVID server/branch/instance
+    "emdata6.int.janelia.org:9000",
+    ":master",
+    "segmentation_annotations",
+    
+    # neuprint server/dataset
+    "neuprint-cns.janelia.org",
+    "cns"
+]
+
+[tasks.malecns-derived-updates]
+cmd = ["bash", "malecns-derived-updates-bsub.sh"]
+

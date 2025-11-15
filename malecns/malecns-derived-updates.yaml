@@ -1,0 +1,43 @@
+logfile: logs/cns-derived-updates.log
+
+dvid:
+  server: http://emdata6.int.janelia.org:9000
+  ignore-mutations-before-uuid: ea2cad4373104c89bc0b69bfca5ff855
+  uuid: ':master'
+  segmentation-name: segmentation
+  timeout: 600.0
+
+update-derived-types: [meshes, sv-meshes, skeletons, annotations]
+#update-derived-types: [skeletons, annotations]
+
+body-meshes:
+  # Notes:
+  #  - chunk config must match the chunk-meshes.config-name
+  #  - method must match a chunk-meshes.quality-configs[i].name, below.
+  source-method: concatenated-chunks-1k_04993d-sc2_halo2_cl8_filled_sm3_dec005
+
+  smoothing: 0
+  small-body-overall-decimation-s0: 0.01
+  large-body-overall-decimation-s0: 0.001
+  small-body-cutoff-vertices-s0: 10e6
+  large-body-cutoff-vertices-s0: 100e6
+
+chunk-meshes:
+  base-uuid: 04993d60dd594df8927c70f4f993b188
+  chunk-shape-s0: [1024, 1024, 1024]
+  config-name: 1k_04993d
+  chunk-halo: 2
+  quality-configs:
+    # Note: name must match suffix in 'source-method', above.
+    - name: sc2_halo2_cl8_filled_sm3_dec005
+      source-scale: 2
+      morphological-closing-s0: 8
+      fill-holes: True
+      smoothing: 3
+      decimation-s0: 0.005
+
+skeletons:
+  neutu-executable: /groups/flyem/proj/cluster/miniforge/workspace/pixi-neutu/.pixi/envs/default/bin/neutu
+  scale: coarse
+
+force-update: false
