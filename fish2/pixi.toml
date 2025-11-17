@@ -9,6 +9,9 @@ version = "0.1.0"
 flyem-snapshot = ">=0.1.15.post0.dev98,<0.2"
 vol2mesh = ">=0.2,<0.3"
 
+# The derived-updates tool uses the neutu executable via a subprocess.
+# We install it to its own environment by listing it in this "feature"
+# and then creating an otherwise empty environment that depends on this "feature".
 [feature.neutu.dependencies]
 neutu-develop = ">=0.9.18"
 
