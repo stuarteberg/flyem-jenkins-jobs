@@ -21,7 +21,7 @@ neutu = {features = ["neutu"], no-default-feature = true}
 # It sets DVID_ADMIN_TOKEN and NEUPRINT_APPLICATION_CREDENTIALS.
 scripts = ["set-credentials.sh"]
 
-[tasks.update-malecns-neuprint-annotations]
+[tasks.update-fish2-neuprint-annotations]
 cmd = [
     # The update-neuprint-annotations command is shipped with the flyem-snapshot package.
     "update-neuprint-annotations",
@@ -29,14 +29,14 @@ cmd = [
     "--output-dir=update-neuprint-annotations/logs/$(date +'%Y-%m-%d.%H-%M-%S')",
 
     # DVID server/branch/instance
-    "emdata6.int.janelia.org:9000",
+    "emdata7.int.janelia.org:8400",
     ":master",
     "segmentation_annotations",
     
     # neuprint server/dataset
-    "neuprint-cns.janelia.org",
-    "cns"
+    "neuprint-fish2.janelia.org",
+    "fish2"
 ]
 
-[tasks.malecns-derived-updates]
-cmd = ["bash", "../bin/derived-updates-bsub.sh", "malecns", "16"]
+[tasks.fish2-derived-updates]
+cmd = ["bash", "../bin/derived-updates-bsub.sh", "fish2", "16"]
