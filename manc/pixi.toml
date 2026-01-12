@@ -1,0 +1,46 @@
+[workspace]
+authors = ["Stuart Berg <bergs@janelia.hhmi.org>"]
+channels = ["flyem-forge", "conda-forge"]
+name = "env"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[dependencies]
+flyem-snapshot = ">=0.1.15.post0.dev98,<0.2"
+vol2mesh = ">=0.2,<0.3"
+neuclease = ">=0.81.post0.dev31,<0.82"
+
+# # The derived-updates tool uses the neutu executable via a subprocess.
+# # We install it to its own environment by listing it in this "feature"
+# # and then creating an otherwise empty environment that depends on this "feature".
+# [feature.neutu.dependencies]
+# neutu-develop = ">=0.9.18"
+
+# [environments]
+# default = []
+# neutu = {features = ["neutu"], no-default-feature = true}
+
+[activation]
+# Note: set-credentials.sh is excluded from the git repo.
+# It sets DVID_ADMIN_TOKEN and NEUPRINT_APPLICATION_CREDENTIALS.
+scripts = ["set-credentials.sh"]
+
+[tasks.update-manc-neuprint-annotations]
+cmd = [
+    # The update-neuprint-annotations command is shipped with the flyem-snapshot package.
+    "update-neuprint-annotations",
+    
+    "--output-dir=update-neuprint-annotations/logs/$(date +'%Y-%m-%d.%H-%M-%S')",
+
+    # DVID server/branch/instance
+    "emdata5.int.janelia.org:8400",
+    ":master",
+    "segmentation_annotations",
+    
+    # neuprint server/dataset
+    "neuprint-pre.janelia.org",
+    "vnc"
+]
+
+# [tasks.manc-derived-updates]
+# cmd = ["bash", "../bin/derived-updates-bsub.sh", "manc", "16"]
