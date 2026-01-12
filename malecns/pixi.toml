@@ -8,6 +8,7 @@ version = "0.1.0"
 [dependencies]
 flyem-snapshot = ">=0.1.15.post0.dev98,<0.2"
 vol2mesh = ">=0.2,<0.3"
+neuclease = ">=0.81.post0.dev31,<0.82"
 
 [feature.mesh-transforms.pypi-dependencies]
 navis = ">=1.10.0, <2"

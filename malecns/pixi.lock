@@ -212,7 +212,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/narwhals-2.11.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/ncurses-6.5-h2d0b736_3.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/networkx-3.5-pyhe01879c_0.conda
-      - conda: https://conda.anaconda.org/flyem-forge/noarch/neuclease-0.81.post0.dev24-0_g1bd0cab.conda
+      - conda: https://conda.anaconda.org/flyem-forge/noarch/neuclease-0.81.post0.dev31-0_ge13e33f.conda
       - conda: https://conda.anaconda.org/flyem-forge/noarch/neuprint-python-0.5.2-py_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/nlohmann_json-3.12.0-h54a6638_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/numba-0.62.1-py312h907b442_0.conda
@@ -522,7 +522,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/narwhals-2.11.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/ncurses-6.5-h2d0b736_3.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/networkx-3.5-pyhe01879c_0.conda
-      - conda: https://conda.anaconda.org/flyem-forge/noarch/neuclease-0.81.post0.dev24-0_g1bd0cab.conda
+      - conda: https://conda.anaconda.org/flyem-forge/noarch/neuclease-0.81.post0.dev31-0_ge13e33f.conda
       - conda: https://conda.anaconda.org/flyem-forge/noarch/neuprint-python-0.5.2-py_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/nlohmann_json-3.12.0-h54a6638_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/numba-0.62.1-py312h907b442_0.conda
@@ -5479,10 +5479,10 @@ packages:
   - pkg:pypi/networkx?source=hash-mapping
   size: 1564462
   timestamp: 1749078300258
-- conda: https://conda.anaconda.org/flyem-forge/noarch/neuclease-0.81.post0.dev24-0_g1bd0cab.conda
+- conda: https://conda.anaconda.org/flyem-forge/noarch/neuclease-0.81.post0.dev31-0_ge13e33f.conda
   noarch: python
-  sha256: 282129e43ee5d69cf7da9e766acda02fee66fb4245947ce69aa8dee868915862
-  md5: 0d19819e902da66855c18855a8da8a21
+  sha256: 8fe58e16c4c78116a62846605f32022ddb3ba4a6ac671568b369737f83f40468
+  md5: fc68ee4edbbcd59b1b1fa039e4aa7fc8
   depends:
   - asciitree
   - confiddler
@@ -5507,8 +5507,8 @@ packages:
   - ujson
   - vigra
   license: BSD (3-clause)
-  size: 415718
-  timestamp: 1761167736166
+  size: 415415
+  timestamp: 1763489327088
 - conda: https://conda.anaconda.org/flyem-forge/noarch/neuprint-python-0.5.2-py_0.conda
   sha256: da35256cea1a1c83f21e8b23e2dc52f96926238614eb2a08a5b508fe1c3fc4ef
   md5: 171a25685195e9e67ebf6bc6f7572781
