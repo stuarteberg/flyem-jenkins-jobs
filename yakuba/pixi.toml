@@ -22,7 +22,7 @@ neutu = {features = ["neutu"], no-default-feature = true}
 
 [activation]
 # Note: set-credentials.sh is excluded from the git repo.
-# It sets DVID_ADMIN_TOKEN and NEUPRINT_APPLICATION_CREDENTIALS.
+# It sets DVID_ADMIN_TOKEN, NEUPRINT_APPLICATION_CREDENTIALS, and GOOGLE_APPLICATION_CREDENTIALS.
 scripts = ["set-credentials.sh"]
 
 [tasks.update-yakuba-neuprint-annotations]
