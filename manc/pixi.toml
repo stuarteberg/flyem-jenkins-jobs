@@ -33,7 +33,7 @@ cmd = [
     "--output-dir=update-neuprint-annotations/logs/$(date +'%Y-%m-%d.%H-%M-%S')",
 
     # DVID server/branch/instance
-    "emdata5.int.janelia.org:8400",
+    "emdata6.int.janelia.org:8400",
     ":master",
     "segmentation_annotations",
     
