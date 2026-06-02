@@ -30,6 +30,12 @@ cmd = [
     # The update-neuprint-annotations command is shipped with the flyem-snapshot package.
     "update-neuprint-annotations",
     
+    # In theory there should be no 'soma_position' or 'soma_location' property in DVID/clio,
+    # but some users might be tempted to add it, which would cause the 'somaLocation' property
+    # to be overwritten in neuprint.
+    # To avoid that, we exclude it from the neuprint updates.
+    "--exclude-properties=somaLocation",
+
     "--output-dir=update-neuprint-annotations/logs/$(date +'%Y-%m-%d.%H-%M-%S')",
 
     # DVID server/branch/instance

@@ -29,6 +29,13 @@ scripts = ["set-credentials.sh"]
 cmd = [
     # The update-neuprint-annotations command is shipped with the flyem-snapshot package.
     "update-neuprint-annotations",
+
+    # In theory there should be no 'soma_position' or 'soma_location' property in DVID/clio,
+    # but apparently one got added at some point, which caused the 'somaLocation' property
+    # to be overwritten in neuprint.
+    # The column has been removed from clio, but to avoid the same thing happening again,
+    # we exclude it from the neuprint updates.
+    "--exclude-properties=somaLocation",
     
     "--output-dir=update-neuprint-annotations/logs/$(date +'%Y-%m-%d.%H-%M-%S')",
 
